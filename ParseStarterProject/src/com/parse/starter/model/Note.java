@@ -18,6 +18,30 @@ public class Note extends ParseObject {
         put("title", title);
     }
 
+    public String getBody() {
+        return getString("body");
+    }
+
+    public void setBody(String body) {
+        put("body", body);
+    }
+
+    public String getLongitude() {
+        return getString("longitude");
+    }
+
+    public void setLongitude(String longitude) {
+        put("longitude", longitude);
+    }
+
+    public String getLatitude() {
+        return getString("latitude");
+    }
+
+    public void setLatitude(String latitude) {
+        put("latitude", latitude);
+    }
+
     public ParseUser getAuthor() {
         return getParseUser("author");
     }

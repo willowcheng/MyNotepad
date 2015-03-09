@@ -1,8 +1,12 @@
 package com.parse.starter;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -16,11 +20,16 @@ import com.parse.ParseUser;
 import com.parse.SaveCallback;
 import com.parse.starter.model.Note;
 
+import java.util.Locale;
+
 public class NewNoteActivity extends ActionBarActivity {
 
     private Button saveButton;
     private Button deleteButton;
-    private EditText noteText;
+    private EditText noteTitle;
+    private EditText noteLongitude;
+    private EditText noteLatitude;
+    private EditText noteBody;
     private Note note;
     private String noteId = null;
 
@@ -34,14 +43,17 @@ public class NewNoteActivity extends ActionBarActivity {
             noteId = getIntent().getExtras().getString("ID");
         }
 
-        noteText = (EditText) findViewById(R.id.note_text);
+        noteTitle = (EditText) findViewById(R.id.note_title);
+        noteLongitude = (EditText) findViewById(R.id.note_longitude);
+        noteLatitude = (EditText) findViewById(R.id.note_latitude);
+        noteBody = (EditText) findViewById(R.id.note_body);
         saveButton = (Button) findViewById(R.id.saveButton);
         deleteButton = (Button) findViewById(R.id.deleteButton);
 
         if (noteId == null) {
             note = new Note();
             note.setUuidString();
-            
+
         } else {
             ParseQuery<Note> query = Note.getQuery();
             query.fromLocalDatastore();
@@ -52,7 +64,10 @@ public class NewNoteActivity extends ActionBarActivity {
                 public void done(Note object, ParseException e) {
                     if (!isFinishing()) {
                         note = object;
-                        noteText.setText(note.getTitle());
+                        noteTitle.setText(note.getTitle());
+                        noteBody.setText(note.getBody());
+                        noteLatitude.setText(note.getLatitude());
+                        noteLongitude.setText(note.getLongitude());
                         deleteButton.setVisibility(View.VISIBLE);
                     }
                 }
@@ -66,7 +81,10 @@ public class NewNoteActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
 
-                note.setTitle(noteText.getText().toString());
+                note.setTitle(noteTitle.getText().toString());
+                note.setBody(noteBody.getText().toString());
+                note.setLongitude(noteLongitude.getText().toString());
+                note.setLatitude(noteLatitude.getText().toString());
                 note.setDraft(true);
                 note.setAuthor(ParseUser.getCurrentUser());
                 note.pinInBackground(ParseApplication.NOTE_GROUP_NAME,
@@ -105,6 +123,31 @@ public class NewNoteActivity extends ActionBarActivity {
 
         });
 
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_new_note, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+if(item.getItemId()==R.id.action_map){
+    String map = String.format(Locale.ENGLISH, "geo:%s,%s", noteLatitude.getText().toString(), noteLongitude.getText().toString());
+    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(map));
+    intent.setPackage("com.google.android.apps.maps");
+    if (intent.resolveActivity(this.getPackageManager()) != null) {
+        startActivity(intent);
+    } else {
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("http://maps.google.com/maps?q=" + "85 University Pvt, Ottawa, ON, K1N 6N5"));
+        startActivity(i);
+    }
+    
+}
+
+        return super.onOptionsItemSelected(item);
     }
 
 }

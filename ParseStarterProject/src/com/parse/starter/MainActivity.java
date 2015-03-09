@@ -1,6 +1,9 @@
 package com.parse.starter;
 
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
@@ -48,11 +51,16 @@ public class MainActivity extends ActionBarActivity {
     private LinearLayout noTodosView;
 
     private TextView loggedInInfoView;
+    private Note note;
+    private Builder mBuilder;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mBuilder = new AlertDialog.Builder(this);
 
         // Set up the views
         todoListView = (ListView) findViewById(R.id.todo_list_view);
@@ -86,11 +94,45 @@ public class MainActivity extends ActionBarActivity {
                 openEditView(note);
             }
         });
+        noteListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                note = noteListAdapter.getItem(i);
+                mBuilder.setIcon(R.drawable.ic_launcher)
+                        .setMessage("Delete Note?")
+                        .setNegativeButton("Confirm",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        if (ParseUser.getCurrentUser() != null) {
+                                            note.deleteEventually();
+                                        }
+                                        noteListAdapter.loadObjects();
+                                        if (ParseUser.getCurrentUser().isNew()) {
+                                            syncTodosToParse();
+                                        } else {
+                                            loadFromParse();
+                                        }
+
+                                    }
+                                })
+                        .setPositiveButton("Cancel",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(final DialogInterface dialog,
+                                                        int id) {
+                                        dialog.dismiss();
+                                    }
+                                });
+                mBuilder.create().show();
+                noteListAdapter.notifyDataSetChanged();
+                return true;
+            }
+        });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        invalidateOptionsMenu();
         // Check if we have a real user
         if (!ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
             // Sync data to Parse
@@ -171,12 +213,14 @@ public class MainActivity extends ActionBarActivity {
             // Unpin all the current objects
             ParseObject
                     .unpinAllInBackground(ParseApplication.NOTE_GROUP_NAME);
+            invalidateOptionsMenu();
         }
 
         if (item.getItemId() == R.id.action_login) {
 
             ParseLoginBuilder builder = new ParseLoginBuilder(this);
             startActivityForResult(builder.build(), LOGIN_ACTIVITY_CODE);
+            invalidateOptionsMenu();
         }
 
         return super.onOptionsItemSelected(item);

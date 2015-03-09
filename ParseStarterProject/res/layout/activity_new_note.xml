@@ -2,34 +2,70 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical" >
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="18sp"
-        android:text="@string/todo_prompt" />
+    android:orientation="vertical"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin">
 
     <EditText
-        android:id="@+id/note_text"
+        android:hint="Title"
+        android:id="@+id/note_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:paddingTop="30dp" >
     </EditText>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <EditText
+        android:hint="Longitude"
+        android:inputType="numberDecimal"
+        android:id="@+id/note_longitude"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="24dp" >
+    </EditText>
+    <EditText
+        android:hint="Latitude"
+        android:inputType="numberDecimal"
+        android:layout_weight="1"
+        android:id="@+id/note_latitude"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:paddingTop="24dp" >
+    </EditText>
+    </LinearLayout>
+    
+
+
+    <EditText
+        android:hint="Body"
+        android:id="@+id/note_body"
+        android:layout_width="fill_parent"
+        android:layout_height="180dp"
+        android:paddingTop="30dp" >
+    </EditText>
+
 
     <Button
         android:id="@+id/saveButton"
+        style="@style/ParseLoginUI.Button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/save" />
 
     <Button
         android:id="@+id/deleteButton"
+        style="@style/ParseLoginUI.Button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/delete"
-        android:visibility="invisible" />
+        android:layout_marginTop="16dp"
+        android:visibility="invisible"
+        android:text="@string/delete" />
 
 </LinearLayout>

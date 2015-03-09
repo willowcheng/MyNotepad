@@ -22,7 +22,7 @@
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="delete">Delete</string>
-    <string name="action_new">New Todo</string>
+    <string name="action_new">New Note</string>
     <string name="action_sync">Sync</string>
     <string name="action_logout">Log Out</string>
     <string name="action_login">Log In</string>
@@ -91,4 +91,5 @@
     <string name="com_parse_ui_login_dispatch_user_logged_in">"User logged in, starting: "</string>
     <string name="com_parse_ui_login_dispatch_user_not_logged_in">User not logged in, starting ParseLoginActivity</string>
 
+    <string name="action_map">Map</string>
 </resources>
