@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\debug\classes-44a40f6d7019e72de70cfb16eddbefa0b4c1990a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Wingus\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.4\129874135e6081269ace2312092031558865de12\bolts-android-1.1.4.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="129874135e6081269ace2312092031558865de12">
+        <dex dex="D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\debug\bolts-android-1.1.4-f91754ed3ba70a585b3cb4f1047c9255907fbde5.jar" />
+    </item>
+    <item
+        jar="D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-066804d97c166e4245a9fe10b378dcd9db92b9a6.jar" />
+    </item>
+    <item
+        jar="D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\debug\classes-1d66aca9d14f1ffc30704c2c4515e06bd2f0bf6a.jar" />
+    </item>
+    <item
+        jar="D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\libs\Parse-1.8.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="56dfc827c23c1f0be64eff2ef556633ea95b16ad">
+        <dex dex="D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\debug\Parse-1.8.3-e5b2d5e3bfa01c61824539f7e428f347473dfe2e.jar" />
+    </item>
+    <item
+        jar="D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\libs\ParseCrashReporting-1.8.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="6abf1314a88755b8fa034b2ae99956fc02170ed1">
+        <dex dex="D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\debug\ParseCrashReporting-1.8.3-befd4e4240867cfef9f5d60cb0ba88d0646c4930.jar" />
+    </item>
+    <item
+        jar="D:\Dev\Android-sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-5a65484bca24f0eb09cf9d9cc77fbe930774c770.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_new"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_add"
+        android:title="@string/action_new">
+    </item>
+
+    <item
+        android:id="@+id/action_sync"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_sync"
+        android:title="@string/action_sync">
+    </item>
+
+    <item
+        android:id="@+id/action_logout"
+        app:showAsAction="never"
+        android:title="@string/action_logout">
+    </item>
+
+    <item
+        android:id="@+id/action_login"
+        app:showAsAction="never"
+        android:title="@string/action_login">
+    </item>
+
+</menu><!-- From: file:/D:/downloads/Parse-Starter-Project-1.8.3/ParseStarterProject/res/menu/note_list.xml -->
