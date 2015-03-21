@@ -2,7 +2,6 @@ package com.parse.starter;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -19,8 +18,6 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 import com.parse.starter.model.Note;
-
-import java.util.Locale;
 
 public class NewNoteActivity extends ActionBarActivity {
 
@@ -134,18 +131,10 @@ public class NewNoteActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-if(item.getItemId()==R.id.action_map){
-    String map = String.format(Locale.ENGLISH, "geo:%s,%s", noteLatitude.getText().toString(), noteLongitude.getText().toString());
-    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(map));
-    intent.setPackage("com.google.android.apps.maps");
-    if (intent.resolveActivity(this.getPackageManager()) != null) {
-        startActivity(intent);
-    } else {
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("http://maps.google.com/maps?q=" + "85 University Pvt, Ottawa, ON, K1N 6N5"));
-        startActivity(i);
-    }
-    
-}
+        if (item.getItemId() == R.id.action_map) {
+            startActivity(new Intent().setClass(this, MapActivity.class).putExtra("Longitude", Double.valueOf(note.getLongitude())).putExtra("Latitude", Double.valueOf(note.getLatitude())));
+
+        }
 
         return super.onOptionsItemSelected(item);
     }

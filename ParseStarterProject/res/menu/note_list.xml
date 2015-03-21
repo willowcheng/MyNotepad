@@ -7,12 +7,18 @@
         android:icon="@drawable/ic_add"
         android:title="@string/action_new">
     </item>
-
     <item
-        android:id="@+id/action_sync"
-        app:showAsAction="never"
-        android:title="@string/action_sync">
+        android:id="@+id/action_all_map"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_google_maps"
+        android:title="@string/action_map">
     </item>
+
+    <!--<item-->
+        <!--android:id="@+id/action_sync"-->
+        <!--app:showAsAction="never"-->
+        <!--android:title="@string/action_sync">-->
+    <!--</item>-->
 
     <item
         android:id="@+id/action_logout"

@@ -34,6 +34,7 @@ import com.parse.SaveCallback;
 import com.parse.starter.model.Note;
 import com.parse.ui.ParseLoginBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
@@ -197,9 +198,9 @@ public class MainActivity extends ActionBarActivity {
             }
         }
 
-        if (item.getItemId() == R.id.action_sync) {
-            syncTodosToParse();
-        }
+//        if (item.getItemId() == R.id.action_sync) {
+//            syncTodosToParse();
+//        }
 
         if (item.getItemId() == R.id.action_logout) {
             // Log out the current user
@@ -214,6 +215,29 @@ public class MainActivity extends ActionBarActivity {
             ParseObject
                     .unpinAllInBackground(ParseApplication.NOTE_GROUP_NAME);
             invalidateOptionsMenu();
+        }
+
+        if (item.getItemId() == R.id.action_all_map) {
+            Intent i = new Intent();
+            String tmLongitude;
+            String tmLatitude;
+            String tmTitle;
+            i.setClass(this, MapActivity.class);
+            ArrayList<String> latitudeList = new ArrayList<>();
+            ArrayList<String> longitudeList = new ArrayList<>();
+            ArrayList<String> titleList = new ArrayList<>();
+            for (int j = 0; j < noteListAdapter.getCount(); j++) {
+                tmLatitude = noteListAdapter.getItem(j).getLatitude();
+                tmLongitude = noteListAdapter.getItem(j).getLongitude();
+                tmTitle = noteListAdapter.getItem(j).getTitle();
+                latitudeList.add(j, tmLatitude);
+                longitudeList.add(j, tmLongitude);
+                titleList.add(j, tmTitle);
+            }
+            i.putStringArrayListExtra("Latitudes", latitudeList);
+            i.putStringArrayListExtra("Longitudes", longitudeList);
+            i.putStringArrayListExtra("Titles", titleList);
+            startActivity(i);
         }
 
         if (item.getItemId() == R.id.action_login) {

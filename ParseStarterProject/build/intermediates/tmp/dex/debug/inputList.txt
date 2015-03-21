@@ -6,3 +6,4 @@ D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates
 D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\debug\classes-1d66aca9d14f1ffc30704c2c4515e06bd2f0bf6a.jar
 D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\debug\Parse-1.8.3-e5b2d5e3bfa01c61824539f7e428f347473dfe2e.jar
 D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\debug\classes-44a40f6d7019e72de70cfb16eddbefa0b4c1990a.jar
+D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\debug\classes-8daf63b3da68d9c37bd7c14839d9322bf772c8f7.jar

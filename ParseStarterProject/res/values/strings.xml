@@ -92,4 +92,7 @@
     <string name="com_parse_ui_login_dispatch_user_not_logged_in">User not logged in, starting ParseLoginActivity</string>
 
     <string name="action_map">Map</string>
+    <string name="title_activity_map">MapActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>

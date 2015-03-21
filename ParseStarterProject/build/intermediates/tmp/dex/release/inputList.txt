@@ -1,0 +1,9 @@
+D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\classes\release
+D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\release\support-annotations-21.0.3-5a65484bca24f0eb09cf9d9cc77fbe930774c770.jar
+D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\release\bolts-android-1.1.4-f91754ed3ba70a585b3cb4f1047c9255907fbde5.jar
+D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\release\ParseCrashReporting-1.8.3-befd4e4240867cfef9f5d60cb0ba88d0646c4930.jar
+D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\release\internal_impl-21.0.3-066804d97c166e4245a9fe10b378dcd9db92b9a6.jar
+D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\release\classes-1d66aca9d14f1ffc30704c2c4515e06bd2f0bf6a.jar
+D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\release\Parse-1.8.3-e5b2d5e3bfa01c61824539f7e428f347473dfe2e.jar
+D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\release\classes-44a40f6d7019e72de70cfb16eddbefa0b4c1990a.jar
+D:\downloads\Parse-Starter-Project-1.8.3\ParseStarterProject\build\intermediates\pre-dexed\release\classes-8daf63b3da68d9c37bd7c14839d9322bf772c8f7.jar
